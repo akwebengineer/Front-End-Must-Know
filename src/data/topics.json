@@ -1,0 +1,63 @@
+{
+    "The Client": [
+        "Critical Rendering Path (CRP)",
+        "The DOM in the raw - No jQuery",
+        "Multitasking with Web Workers",
+        "Store and Retrieve: Cookies, Local Storage and Session Storage",
+        "Push, not pull - Web Sockets",
+        "Sparkling clean with AJAX",
+        "Performance tricks",
+        "The History (API) Channel"
+    ],
+    "Must know fundamentals": [
+        "Transport and Security - HTTP and HTTPS",
+        "Internaltionalization and Localization",
+        "Accessibility",
+        "Authentication",
+        "Principles of REST",
+        "Search Engine Optimization",
+        "Service Workers",
+        "Busted! Forget all that's cached",
+        "Modules: ES6, AMD and CJS",
+        "CI / CD: Bundle, Load and Ship!"
+    ],
+    "Javascript": [
+        ">>> SKIP THIS >>>What is this?",
+        ">>> SKIP THIS >>>There is always scope for learning more",
+        "Hoist the flag high!",
+        ">ECMA 2015: Can't get away without these anymore!",
+        { "Design Patterns": [] },
+        "Closures",
+        ">>> MAY BE LATER >>> Currying",
+        "Debouncing",
+        "Throttling",
+        "Memoization",
+        "A little bit of this - Bitwise Operators"
+    ],
+    "Data Structures": [
+        "Queue",
+        "Stack",
+        "Linked List",
+        "Map",
+        "Hash",
+        "Tree",
+        "Graph"
+    ],
+    "Algorithms": [{
+        "Foundations": [
+            "Big O",
+            "Recursion",
+            {
+                "Search": [],
+                "Sort": [],
+                "Tree Algorithms": [],
+                "Graph Algorithms": []
+            }
+        ],
+        "String Thing": [
+            "Palindrome",
+            "Tuples"
+        ]
+    }],
+    "System Design": []
+}
