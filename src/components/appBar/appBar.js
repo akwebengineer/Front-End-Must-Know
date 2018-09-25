@@ -8,6 +8,10 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
+
+import {actionCreators} from '../../redux/actionCreators';
+import {connect} from 'react-redux';
+
 const styles = {
     root: {
         flexGrow: 1
@@ -16,7 +20,7 @@ const styles = {
         // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
         // background: 'linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%)'  
         background: 'linear-gradient(141deg,#0000cc 0%, #3333ff 5%, #3333cc 15%, #6600ff 35%, #9933ff 50%)'  
-        // background: 'linear-gradient(90deg,#640487,#003087)'
+        // background: 'linear-gdient(90deg,#640487,#003087)'
         // background: '#ff5722',      
     },
     flex: {
@@ -28,20 +32,25 @@ const styles = {
     },
 };
 
+const mapStateToProps = (state) => {
+    return {}
+
+}
 class ButtonAppBar extends React.Component {
-    handleMenuClick = (event) => {
-        this.props.handleMenuClick(event); // Replace this with redux action call
+    handleMenuClick = () => {
+        // this.props.handleMenuClick(event); // Replace this with redux action call
+        const {dispatch} = this.props;
+        dispatch(actionCreators.toggleMenu());
     }
-    render() {
-        const { classes } = this.props;
+    render() {        
         return (
-            <div className={classes.root}>
-                <AppBar position="static" className={classes.header}>
+            <div className={styles.root}>
+                <AppBar position="static" className={styles.header}>
                     <Toolbar>
-                        <IconButton className={classes.menuButton} onClick={this.handleMenuClick} color="inherit" aria-label="Menu">
+                        <IconButton className={styles.menuButton} onClick={this.handleMenuClick} color="inherit" aria-label="Menu">
                             <MenuIcon />
                         </IconButton>
-                        <Typography variant="title" color="inherit" className={classes.flex}>
+                        <Typography variant="title" color="inherit" className={styles.flex}>
                             <span>TITLE</span>
                         </Typography>
                         <Button color="inherit">Login</Button>
@@ -57,4 +66,4 @@ ButtonAppBar.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ButtonAppBar);
+export default withStyles(styles)(connect(mapStateToProps)(ButtonAppBar));

@@ -13,8 +13,11 @@ import IconButton from '@material-ui/core/IconButton';
 import SettingsIcon from '@material-ui/icons/SettingsOutlined';
 import Typography from '@material-ui/core/Typography';
 
+import { connect } from 'react-redux';
+import { actionCreators } from '../../redux/actionCreators';
+
 const styles = {
-    flex:{
+    flex: {
         flexGrow: 1,
         float: 'left',
         color: 'inherit',
@@ -23,7 +26,7 @@ const styles = {
     },
     tocListContainer: {
         width: '100%',
-        color: '#191919'      
+        color: '#191919'
     },
     tocList: {
         width: '250px'
@@ -31,41 +34,53 @@ const styles = {
     tocItem: {
         width: '100%',
     },
-    topicTitle:{
+    topicTitle: {
         fontWeight: 400
     },
     tocHead: {
         height: 65,
         // background: 'linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%)',        
-        color: '#9933ff'        
+        color: '#9933ff'
     },
     tocHeadContent: {
-        padding: '10px',        
-    },    
+        padding: '10px',
+    },
     settingsIcon: {
-        float: 'right', 
-        color: 'inherit'      
+        float: 'right',
+        color: 'inherit'
     }
 };
 
-const tocItems = {
-    item1: {
-        title: 'Javascript Tips and Tricks',
-        topics: ['Closures', 'Context (this)', 'Scope', 'Memoization', 'Debouncing', 'Throttling', 'Event Loop']
-    },
-    item2: {
-        title: 'Algorithms and Datastructures',
-        topics: ['Queue', 'Stack', 'Linked List', 'Array', 'Hash Map', 'Graph', 'Tree']
-    },
-};
+// const tocItems = {
+//     item1: {
+//         title: 'Javascript Tips and Tricks',
+//         topics: ['Closures', 'Context (this)', 'Scope', 'Memoization', 'Debouncing', 'Throttling', 'Event Loop']
+//     },
+//     item2: {
+//         title: 'Algorithms and Datastructures',
+//         topics: ['Queue', 'Stack', 'Linked List', 'Array', 'Hash Map', 'Graph', 'Tree']
+//     },
+// };
 
+const mapStateToProps = (state) => ({
+    menuVisible: state.menuToggleReducer.menuVisible,
+    tocItems: state.loadTOCReducer.tocItems
+});
 class TOC extends React.Component {
-    handleNavItemClick = (event) => {
-        this.props.handleNavItemClick(event);
+
+    handleNavItemClick = () => {
+        // this.props.handleNavItemClick(event);
+        const { dispatch } = this.props;
+        dispatch(actionCreators.toggleMenu());
+    }
+
+    componentDidMount() {
+        const { dispatch } = this.props;
+        dispatch(actionCreators.loadTOC());
     }
 
     render() {
-        const { classes } = this.props;
+        let { tocItems, classes } = this.props;
         const sideList = (
             <span className={classes.top}>
                 <Card className={classes.tocHead}>
@@ -73,63 +88,44 @@ class TOC extends React.Component {
                         <Typography variant="title" className={classes.flex}>
                             <span>Contents</span>
                         </Typography>
-                        <IconButton size="small"  aria-label="Settings" className={classes.settingsIcon} onClick={this.handleNavItemClick}>
+                        <IconButton size="small" aria-label="Settings" className={classes.settingsIcon} onClick={this.handleNavItemClick}>
                             <SettingsIcon />
                         </IconButton>
                     </CardContent>
                 </Card>
                 <div className={classes.tocListContainer}>
-                    <ExpansionPanel>
-                        <ExpansionPanelSummary className={classes.topicTitle}>{tocItems.item1.title}</ExpansionPanelSummary>
-                        <ExpansionPanelDetails>
-                            <List className={classes.tocList} onClick={this.handleNavItemClick} onKeyDown={this.handleNavItemClick}>
-                                {
-                                    tocItems.item1.topics.map((item, index) => {
-                                        let elem = '';
-                                        if (index === 1) {
-                                            elem = (<ListItem button selected={true} className={classes.tocItem} key={index + '-' + item}>{item}</ListItem>);
-                                        }
-                                        else {
-                                            elem = (<ListItem button className={classes.tocItem} key={index + '-' + item}>{item}</ListItem>);
-                                        }
-                                        return elem;
-                                    })
-                                }
-                            </List>
-                        </ExpansionPanelDetails>
-                    </ExpansionPanel>
-                    <ExpansionPanel>
-                        <ExpansionPanelSummary className={classes.topicTitle}>{tocItems.item2.title}</ExpansionPanelSummary>
-                        <ExpansionPanelDetails>
-                            <List className={classes.tocList} onClick={this.handleNavItemClick} onKeyDown={this.handleNavItemClick}>
-                                {
-                                    tocItems.item2.topics.map((item, index) => {
-                                        let elem = '';
-                                        if (index === 1) {
-                                            elem = (<ListItem button selected={true} className={classes.tocItem} key={index + '-' + item}>{item}</ListItem>);
-                                        }
-                                        else {
-                                            elem = (<ListItem button className={classes.tocItem} key={index + '-' + item}>{item}</ListItem>);
-                                        }
-                                        return elem;
-                                    })
-                                }
-                            </List>
-                        </ExpansionPanelDetails>
-                    </ExpansionPanel>
+                    {
+                        tocItems.map((mainTopic, index) => {
+                            return (
+                                <ExpansionPanel key={index}>
+                                    <ExpansionPanelSummary className={classes.topicTitle}>{mainTopic.title}</ExpansionPanelSummary>
+                                    <ExpansionPanelDetails>
+                                        <List className={classes.tocList} onClick={this.handleNavItemClick} onKeyDown={this.handleNavItemClick}>
+                                            {mainTopic.topics.map((topic, index) => {
+                                                let elem = '';
+                                                if (index === 1) {
+                                                    elem = (<ListItem button selected={true} className={classes.tocItem} key={index + '-' + topic}>{topic}</ListItem>);
+                                                }
+                                                else {
+                                                    elem = (<ListItem button className={classes.tocItem} key={index + '-' + topic}>{topic}</ListItem>);
+                                                }
+                                                return elem;
+                                            })}
+                                        </List>
+                                    </ExpansionPanelDetails>
+                                </ExpansionPanel>
+                            );
+                        })
+                    }
                 </div>
             </span>
         );
 
         return (
-            <Drawer  open={this.props.open} variant="persistent">
+            <Drawer open={this.props.menuVisible} variant="persistent">
                 {sideList}
             </Drawer>
         );
-    }
-
-    componentDidMount() {
-        // Add TOC items here rather than in render
     }
 }
 
@@ -137,4 +133,4 @@ TOC.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(TOC);
+export default withStyles(styles)(connect(mapStateToProps)(TOC));

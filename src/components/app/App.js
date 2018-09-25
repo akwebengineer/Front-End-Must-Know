@@ -37,20 +37,22 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <ButtonAppBar menuVisible={this.state.menuVisible} handleMenuClick={this.openNavMenu} />
-        <div className="app-main">
-          <nav >
-            <TOC className="app-nav" open={this.state.menuVisible} handleNavItemClick={this.handleNavItemClick} />
-          </nav>
-          <section>
-            <span className="app-place-holder">
-              <CodeIcon/>
-            </span>
-          </section>
+      <Provider store={store}>
+        <div className="App">
+          <ButtonAppBar menuVisible={this.state.menuVisible} handleMenuClick={this.openNavMenu} />
+          <div className="app-main">
+            <nav >
+              <TOC className="app-nav" open={this.state.menuVisible} handleNavItemClick={this.handleNavItemClick} />
+            </nav>
+            <section>
+              <span className="app-place-holder">
+                <CodeIcon />
+              </span>
+            </section>
+          </div>
+          <footer></footer>
         </div>
-        <footer></footer>
-      </div>
+      </Provider> 
     );
   }
 }
