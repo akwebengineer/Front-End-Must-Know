@@ -38,7 +38,8 @@ body {
 .app-main {
     width: 100%;
     position: absolute;
-    height: 100%;
+    height: calc(100% - 64px);
+    top: 64px;
     /* background: linear-gradient(90deg, #640487, #003087);
      */
     background-image: url('../../media/background.jpg');

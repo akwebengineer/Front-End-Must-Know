@@ -67,12 +67,11 @@ class ButtonAppBar extends React.Component {
                         <IconButton className={classes.menuButton} onClick={this.handleMenuClick} color="inherit" aria-label="Menu">
                             <MenuIcon />
                         </IconButton>
-                        <Typography variant="title" color="inherit" className={classes.flex}>
-                            <span>ARVIND KANNAN</span>
-                        </Typography>
                         <AppNavTab tabData={appNavItems}/>
                         {
-                            
+                        //     <Typography variant="title" color="inherit" className={classes.flex}>
+                        //     <span>ARVIND KANNAN</span>
+                        // </Typography>
                             // <Button color="inherit">Login</Button>
                         }
                     </Toolbar>

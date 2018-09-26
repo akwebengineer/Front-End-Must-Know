@@ -58,7 +58,9 @@ class App extends Component {
                 <TOC open={this.state.menuVisible} handleNavItemClick={this.handleNavItemClick} />
               </nav>
               <section className="app-main-section">
-                <Route path="/resume" component={AboutMe}/>
+              
+                <Route exact path='/' component={AboutMe}/>
+                <Route path="/about" component={AboutMe}/>
                 
               </section>
             </div>
