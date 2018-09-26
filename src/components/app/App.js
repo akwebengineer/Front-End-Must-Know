@@ -1,19 +1,31 @@
 import React, { Component } from 'react';
-import {createStore, applyMiddleware} from 'redux';
+
+//Redux
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'
 import { createLogger } from 'redux-logger';
 import ReduxThunk from 'redux-thunk';
-
-
-//Component Imports
-import './App.css';
-import ButtonAppBar from '../appBar/appBar'
-import TOC from '../toc/toc'
-import CodeIcon from '@material-ui/icons/Code';
-
-
-//Redux
 import appReducer from '../../redux/reducers';
+
+
+//React router imports
+import {
+  BrowserRouter as Router,
+  Route,  
+  Switch,
+  Redirect
+} from 'react-router-dom';
+
+//Component imports
+import './App.css';
+import ButtonAppBar from '../appBar'
+import TOC from '../toc'
+import AboutMe from '../about';
+
+//End imports
+
+
+
 
 const logger = createLogger();
 const middleware = applyMiddleware(ReduxThunk, logger);
@@ -38,21 +50,22 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="App">
-          <ButtonAppBar menuVisible={this.state.menuVisible} handleMenuClick={this.openNavMenu} />
-          <div className="app-main">
-            <nav >
-              <TOC className="app-nav" open={this.state.menuVisible} handleNavItemClick={this.handleNavItemClick} />
-            </nav>
-            <section>
-              <span className="app-place-holder">
-                <CodeIcon />
-              </span>
-            </section>
+        <Router>
+          <div className="App">
+            <ButtonAppBar menuVisible={this.state.menuVisible} handleMenuClick={this.openNavMenu} />
+            <div className="app-main">
+              <nav className="app-nav">
+                <TOC open={this.state.menuVisible} handleNavItemClick={this.handleNavItemClick} />
+              </nav>
+              <section className="app-main-section">
+                <Route path="/resume" component={AboutMe}/>
+                
+              </section>
+            </div>
+            <footer></footer>
           </div>
-          <footer></footer>
-        </div>
-      </Provider> 
+        </Router>
+      </Provider>
     );
   }
 }

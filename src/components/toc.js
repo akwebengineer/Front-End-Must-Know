@@ -14,7 +14,7 @@ import SettingsIcon from '@material-ui/icons/SettingsOutlined';
 import Typography from '@material-ui/core/Typography';
 
 import { connect } from 'react-redux';
-import { actionCreators } from '../../redux/actionCreators';
+import { actionCreators } from '../redux/actionCreators';
 
 const styles = {
     flex: {
@@ -38,9 +38,10 @@ const styles = {
         fontWeight: 400
     },
     tocHead: {
-        height: 65,
+        minHeight: 64,
         // background: 'linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%)',        
-        color: '#9933ff'
+        // color: '#9933ff'
+        color: '#f94b04'
     },
     tocHeadContent: {
         padding: '10px',
@@ -48,6 +49,10 @@ const styles = {
     settingsIcon: {
         float: 'right',
         color: 'inherit'
+    },
+    drawerPaper:{
+        position: 'relative',
+        width: 240
     }
 };
 
@@ -93,6 +98,7 @@ class TOC extends React.Component {
                         </IconButton>
                     </CardContent>
                 </Card>
+        
                 <div className={classes.tocListContainer}>
                     {
                         tocItems.map((mainTopic, index) => {
@@ -122,7 +128,7 @@ class TOC extends React.Component {
         );
 
         return (
-            <Drawer open={this.props.menuVisible} variant="persistent">
+            <Drawer open={this.props.menuVisible} variant="persistent" className={classes.drawerPaper}>
                 {sideList}
             </Drawer>
         );
