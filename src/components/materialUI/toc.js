@@ -14,7 +14,7 @@ import SettingsIcon from '@material-ui/icons/SettingsOutlined';
 import Typography from '@material-ui/core/Typography';
 
 import { connect } from 'react-redux';
-import { actionCreators } from '../redux/actionCreators';
+import { actionCreators } from '../../redux/actionCreators';
 
 const styles = {
     flex: {

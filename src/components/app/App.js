@@ -18,9 +18,11 @@ import {
 
 //Component imports
 import './App.css';
-import ButtonAppBar from '../appBar'
-import TOC from '../toc'
-import AboutMe from '../about';
+import ButtonAppBar from '../materialUI/appBar'
+import TOC from '../materialUI/toc'
+import AboutMe from '../about/about';
+import Resume from '../resume/resume';
+import MyBlogs from '../blogs/blogs';
 
 //End imports
 
@@ -54,14 +56,16 @@ class App extends Component {
           <div className="App">
             <ButtonAppBar menuVisible={this.state.menuVisible} handleMenuClick={this.openNavMenu} />
             <div className="app-main">
-              <nav className="app-nav">
-                <TOC open={this.state.menuVisible} handleNavItemClick={this.handleNavItemClick} />
-              </nav>
-              <section className="app-main-section">
-              
+{              
+  // <nav className="app-nav">
+  //               <TOC open={this.state.menuVisible} handleNavItemClick={this.handleNavItemClick} />
+  //             </nav>
+            }
+              <section className="app-main-section">              
                 <Route exact path='/' component={AboutMe}/>
                 <Route path="/about" component={AboutMe}/>
-                
+                <Route path="/resume" component={Resume}/>
+                <Route path="/blog" component={MyBlogs}/>      
               </section>
             </div>
             <footer></footer>

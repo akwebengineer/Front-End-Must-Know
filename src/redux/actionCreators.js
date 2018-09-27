@@ -1,7 +1,6 @@
 import {actionTypes} from './actions';
 
-const toggleMenu = () => {
-    console.log('HERE.....');
+const toggleMenu = () => {    
     return {
         type: actionTypes.TOGGLE_MENU
     }    
@@ -24,6 +23,14 @@ const loadTOC = () => {
         type: actionTypes.LOAD_TOC,
         payLoad: payLoad
     }
+}
+
+const navigate = (dispatch, payLoad) => {
+    const action = {
+        type: actionTypes.NAVIGATE,
+        payload: payLoad
+    }
+    dispatch(action);
 }
 
 

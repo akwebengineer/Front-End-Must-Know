@@ -1,0 +1,50 @@
+/* These are temporary workaround styles for resume component*/
+
+.resume-wrapper {
+    display: flex;
+    flex-direction: row;
+    /* background-image: url('../../media/aboutBg.JPG'); */
+    background-repeat: no-repeat;
+    position: fixed;
+    min-height: 100%;
+    width: 100%;
+    /* background-size: contain; */
+}
+
+.resume-left {
+    width: 25%;
+    position: relative;
+    /* padding-top: 80px; */
+}
+
+.resume-right {
+    width: 75%;
+    color: #f94b04;
+}
+
+
+/* .image-area {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+}
+
+.resume-bgImage {
+    background-image: url('../media/bgImg.jpeg');
+    background-size: contain;
+    width: 100%;
+    height: 250px;
+    background-repeat: no-repeat;
+} */
+
+.resume-profileImage {
+    background-image: url('../../media/profileImg.jpeg');
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    background-size: contain;
+    margin: 25px 50px 25px 50px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    /* margin-top: 100px; */
+}
