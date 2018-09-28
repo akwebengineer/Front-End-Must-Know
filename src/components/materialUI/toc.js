@@ -39,7 +39,7 @@ const styles = {
     },
     tocHead: {
         minHeight: 64,
-        // background: 'linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%)',        
+        // background: 'linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%)',
         // color: '#9933ff'
         color: '#f94b04'
     },
@@ -55,17 +55,6 @@ const styles = {
         width: 240
     }
 };
-
-// const tocItems = {
-//     item1: {
-//         title: 'Javascript Tips and Tricks',
-//         topics: ['Closures', 'Context (this)', 'Scope', 'Memoization', 'Debouncing', 'Throttling', 'Event Loop']
-//     },
-//     item2: {
-//         title: 'Algorithms and Datastructures',
-//         topics: ['Queue', 'Stack', 'Linked List', 'Array', 'Hash Map', 'Graph', 'Tree']
-//     },
-// };
 
 const mapStateToProps = (state) => ({
     menuVisible: state.menuToggleReducer.menuVisible,
@@ -98,7 +87,7 @@ class TOC extends React.Component {
                         </IconButton>
                     </CardContent>
                 </Card>
-        
+
                 <div className={classes.tocListContainer}>
                     {
                         tocItems.map((mainTopic, index) => {

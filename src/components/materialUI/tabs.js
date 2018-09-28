@@ -7,6 +7,9 @@ import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
+//Redux imports
+import { connect } from 'react-redux';
+
 //React router imports
 // import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -14,26 +17,31 @@ import { Link } from 'react-router-dom';
 const styles = {
   root: {
     flexGrow: 1,
-    boxShadow: '0px 0px 0px 0px',    
+    boxShadow: '0px 0px 0px 0px',
   },
   tab:{
     fontFamily:"'Open Sans', sans-serif"
   }
 };
 
+const mapStateToProps = (state) => ({
+  currentActiveNavTab: state.navigateReducer.currentActiveNavTab
+});
+
 class CenteredTabs extends React.Component {
-  state = {
-    value: 0,
-  };
+  // state = {
+  //   value: 0,
+  // };
 
   handleChange = (event, value) => {
-    console.log(value);
-    this.setState({ value });
+    // console.log('value');
+    // console.log(value);
+    // this.setState({ value });
   };
 
   handleTabClick = (payload) => {
-    const { dispatch } = this.props;
-    dispatch
+    // const { dispatch } = this.props;
+    // dispatch
   }
 
   render() {
@@ -43,18 +51,18 @@ class CenteredTabs extends React.Component {
     return (
       <Paper className={classes.root}>
         <Tabs
-          value={this.state.value}
-          onChange={this.handleChange} 
-          className={classes.tab}         
+          value={this.props.currentActiveNavTab}
+          onChange={this.handleChange}
+          className={classes.tab}
           centered
         >
           {
             tabItems.map((tab, index) => {
 
               // const _tab = withRouter(({ history }) => (
-              //     <Tab  
-              //         label={tabData[tab].label} 
-              //         onClick={()=>{history.push(`/${tabData[tab].URL}`);}} 
+              //     <Tab
+              //         label={tabData[tab].label}
+              //         onClick={()=>{history.push(`/${tabData[tab].URL}`);}}
               //     />
               //     // <button
               //     //   type='button'
@@ -63,11 +71,11 @@ class CenteredTabs extends React.Component {
               //     //   Click Me!
               //     // </button>
               //   ));
-              //   return _tab;    
+              //   return _tab;
 
-              //   <Route key={index} render={({history}) => {                        
+              //   <Route key={index} render={({history}) => {
               //     return(
-              //         <Tab  label={tabData[tab].label} onClick={()=>{                                
+              //         <Tab  label={tabData[tab].label} onClick={()=>{
               //             // history.push(`/${tabData[tab].URL}`);
               //             this.handleTabClick({history, URL: tabData[tab].URL})
               //         }} />
@@ -95,4 +103,4 @@ CenteredTabs.propTypes = {
   tabData: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(CenteredTabs);
+export default withStyles(styles)(connect(mapStateToProps)(CenteredTabs));

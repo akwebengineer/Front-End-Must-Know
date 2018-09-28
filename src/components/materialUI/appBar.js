@@ -10,10 +10,10 @@ import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+// import Typography from '@material-ui/core/Typography';
+// import Button from '@material-ui/core/Button';
+// import IconButton from '@material-ui/core/IconButton';
+// import MenuIcon from '@material-ui/icons/Menu';
 
 // Custom component imports
 import AppNavTab from './tabs';
@@ -64,7 +64,7 @@ class ButtonAppBar extends React.Component {
                             //     <MenuIcon />
                             // </IconButton>
                         }
-                        <AppNavTab tabData={appNavItems} />
+                        <AppNavTab currentActiveNavTab={0} tabData={appNavItems} />
                         {
                             //     <Typography variant="title" color="inherit" className={classes.flex}>
                             //     <span>ARVIND KANNAN</span>

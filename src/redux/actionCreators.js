@@ -1,9 +1,9 @@
 import {actionTypes} from './actions';
 
-const toggleMenu = () => {    
+const toggleMenu = () => {
     return {
         type: actionTypes.TOGGLE_MENU
-    }    
+    }
 }
 
 const loadTOC = () => {
@@ -25,16 +25,31 @@ const loadTOC = () => {
     }
 }
 
-const navigate = (dispatch, payLoad) => {
+const navigate = (URL) => {
     const action = {
         type: actionTypes.NAVIGATE,
-        payload: payLoad
+        payload: { URL }
     }
-    dispatch(action);
+    switch (URL) {
+        case "about":
+            action.payload.activeTab = 0;
+            break;
+        case "blog":
+            action.payload.activeTab = 1;
+            break;
+        case "resume":
+            action.payload.activeTab = 2;
+            break;
+        default:
+            action.payload.activeTab = 0;
+    }
+
+    return action;
 }
 
 
 export const actionCreators =  {
     toggleMenu,
-    loadTOC
+    loadTOC,
+    navigate
 };
