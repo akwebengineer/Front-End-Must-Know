@@ -3,11 +3,19 @@ import Divider from '@material-ui/core/Divider';
 
 const styles = {
     experienceHead: {
-        lineHeight: 0.5
+        color: '#f94b04'        
     },
     experiencePoints: {
         marginLeft: '30px',
-        lineHeight: 0.65
+        marginTop: '2px'
+        // lineHeight: 0.65
+    },
+    normalLineHt:{
+        // lineHeight: 1.5
+        marginTop: '5px',        
+    },
+    articleSection: {
+        marginBottom: '35px'
     }
 }
 
@@ -15,7 +23,7 @@ const styles = {
 const Profile = () => (
     <div>
         <header>
-            <h2>
+            <h2 style={styles.experienceHead}>
                 Arvind Kannan
             </h2>
             <h3>
@@ -24,7 +32,7 @@ const Profile = () => (
         </header>
         <Divider />
         <section>
-            <h3>
+            <h3 style={styles.experienceHead}>
                 Summary
             </h3>
             <div>
@@ -35,14 +43,14 @@ const Profile = () => (
         </section>
         <Divider />
         <section>
-            <h3>
+            <h3 style={styles.experienceHead}>
                 Experience
             </h3>
-            <article>
-                <h4 style={styles.experienceHead}>
-                    Software Engineer at Juniper Networks
-            </h4>
-                <h5 style={styles.experienceHead}> November 2015 - Present </h5>
+            <article style={styles.articleSection}>
+                <h4>
+                    Senior Software Engineer at Juniper Networks
+                </h4>
+                <h5 > November 2015 - Present </h5>
                 <div style={styles.experiencePoints}>
                     <p>
                         Develop reusable framework widget components
@@ -69,16 +77,16 @@ const Profile = () => (
                         Migrate jQuery based widgets to React Components
                     </p>
                     <Divider />
-                    <p>
+                    <p style={styles.normalLineHt}>
                         Technologies: Backbone, MarionetteJS, ReactJS, Webpack, RequireJS, NodeJS, ExpressJS, SocketIO, jQuery, jQueryUI, D3JS, Grunt, Git, Mocha, SASS
                 </p>
                 </div>
             </article>
-            <article>
-                <h4 style={styles.experienceHead}>
-                    Senior Engineer at BMC Software
+            <article style={styles.articleSection}>
+                <h4>
+                    Senior Software Engineer at BMC Software
             </h4>
-                <h5 style={styles.experienceHead}> April 2013  -  May 2015 </h5>
+                <h5 > April 2013  -  May 2015 </h5>
                 <div style={styles.experiencePoints}>
                     <p>
                         Update application to AngularJS
@@ -97,16 +105,16 @@ const Profile = () => (
                         Develop java plugins to hook up third party applications with BMC Remedy
                     </p>
                     <Divider />
-                    <p>
+                    <p style={styles.normalLineHt}>
                         Technologies: HTML, CSS, Javascript, jQuery, Angular JS, Underscore, Jasmine, Bootstrap, Grunt, Gulp, D3JS, Bower, NodeJS, Perforce
                 </p>
                 </div>
             </article>
-            <article>
-                <h4 style={styles.experienceHead}>
+            <article style={styles.articleSection}>
+                <h4>
                     Software Engineer at Prosoft IT Services
                 </h4>
-                <h5 style={styles.experienceHead}>October 2010  -  March 2013 </h5>
+                <h5 >October 2010  -  March 2013 </h5>
                 <div style={styles.experiencePoints}>
                     <p>
                         Develop modern Web UI layer for BMC ITSM application
@@ -121,16 +129,16 @@ const Profile = () => (
                         Work with Java backend team to create and consume Rest APIs for the new UI
                     </p>
                     <Divider />
-                    <p>
+                    <p style={styles.normalLineHt}>
                         Technologies: HTML, CSS, Bootstrap, Javascript, jQuery, jQueryUI, AJAX, Perforce
                     </p>
                 </div>
             </article>
-            <article>
-                <h4 style={styles.experienceHead}>
+            <article style={styles.articleSection}>
+                <h4>
                     IT Analyst at Tata Consultancy Services
                 </h4>
-                <h5 style={styles.experienceHead}>August 2008  -  October 2010</h5>
+                <h5 >August 2008  -  October 2010</h5>
                 <div style={styles.experiencePoints}>
                     <p>
                         Design and developed applications on BMC AR System platform
@@ -148,22 +156,22 @@ const Profile = () => (
                         Expert consultant on ITSM Application for several major industries including media and entertainment, manufacturing etc.
                     </p>
                     <Divider />
-                    <p>
+                    <p style={styles.normalLineHt}>
                         Technologies: HTML, CSS, Javascript, Unix, Oracle DB, BMC Remedy AR System
                     </p>
                 </div>
             </article>
-            <article>
-                <h4 style={styles.experienceHead}>
+            <article style={styles.articleSection}>
+                <h4>
                     System Engineer at Tata Consultancy Services
                 </h4>
-                <h5 style={styles.experienceHead}>June 2005  -  August 2008</h5>
+                <h5 >June 2005  -  August 2008</h5>
                 <div style={styles.experiencePoints}>
                     <p>
                         Applications Developer - Developed Billing Application with PL/SQL, Custom Helpdesk with AR System and Web Technologies
                     </p>
                     <Divider />
-                    <p>
+                    <p style={styles.normalLineHt}>
                         Technologies: Oracle DB, Solaris, Shell Script, PL/SQL, HTML, CSS, Javascript, BMC Remedy AR System
                     </p>
                 </div>
@@ -171,15 +179,15 @@ const Profile = () => (
         </section>
         <Divider />
         <section>
-            <h3>
+            <h3 style={styles.experienceHead}>
                 Education
             </h3>
         </section>
-        <article>
-                <h4 style={styles.experienceHead}>
+        <article style={styles.articleSection}>
+                <h4>
                 Visvesvaraya Technological University
                 </h4>
-                <h5 style={styles.experienceHead}>2000 - 2004</h5>
+                <h5 >2000 - 2004</h5>
                 <div style={styles.experiencePoints}>
                     <p>
                     Bachelor of Science (BS) in Electrical and Electronics Engineering

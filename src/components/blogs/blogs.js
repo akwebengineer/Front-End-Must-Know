@@ -15,8 +15,12 @@ class MyBlogs extends React.Component {
     }
     render() {
         return (
-            <div className="blog-wrapper">
-                <iframe title="my-blogs" className="blog-iframe" src="https://larklearning.blogspot.com/" onClick={this.handleBlogClick}></iframe>
+            <div className="blog-wrapper"> 
+             <iframe title="my-blogs" className="blog-iframe" src="https://larklearning.blogspot.com/" onClick={this.handleBlogClick}></iframe>
+                {
+                    
+                    // <iframe title="my-blogs" className="blog-iframe" src="https://medium.com/@akwebengineer" onClick={this.handleBlogClick}></iframe>
+                } 
             </div >
         )
     }

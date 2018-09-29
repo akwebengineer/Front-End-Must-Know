@@ -5,7 +5,7 @@
     /* flex-direction: row; */
     /* background-image: url('../../media/aboutBg.JPG'); */
     background-repeat: no-repeat;
-    position: fixed;
+    /* position: fixed; */
     min-height: 100%;
     width: 100%;
     /* background-size: contain; */
@@ -18,22 +18,18 @@
         /* position: relative; */
         /* padding-top: 80px; */
     }
-
     .resume-right {
         /* width: 75%; */
         display: block;
         margin: 10px 20px;
     }
-
     .resume-title {
-       display: inline-block;
+        display: inline-block;
         margin-top: 35px
     }
-
-    .resume-profileImage{
+    .resume-profileImage {
         display: none;
     }
-
     .resume-profileImage-title {
         background-image: url('../../media/profileImg.jpeg');
         width: 50px;
@@ -45,32 +41,27 @@
         background-repeat: no-repeat;
         position: relative;
         float: left;
-
         /* margin-top: 100px; */
     }
-
 }
+
 @media only screen and (min-width: 600px) {
     .resume-left {
         display: inline-block;
         width: 25%;
     }
-
-    .resume-left>span{
+    .resume-left>span {
         margin-top: 50px;
     }
-
     .resume-right {
         display: inline-block;
         width: 75%;
         position: absolute;
         margin-top: 40px;
     }
-
     .resume-profileImage-title {
         display: none;
     }
-
     .resume-profileImage {
         background-image: url('../../media/profileImg.jpeg');
         width: 200px;
@@ -82,7 +73,48 @@
         background-repeat: no-repeat;
         /* margin-top: 100px; */
     }
-
+    .social-wrapper {
+        margin: 10px 50px;
+    }
+    .social {
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        margin-right: 12px;
+        background-repeat: no-repeat;
+    }
+    .twitter {
+        background-image: url('../../media/twitter.svg');
+    }
+    .medium {
+        background-image: url('../../media/medium.svg');
+    }
+    .youtube {
+        background-image: url(/static/media/youtube.398c4219.svg);
+        margin-bottom: -2px;
+        width: 27px;
+        height: 27px;
+    }
+    .linkedin {
+        background-image: url('../../media/linkedin.svg');
+        width: 27px;
+        height: 30px;
+        margin-bottom: 1px;
+    }
+    .blogger {
+        background-image: url('../../media/blogger.svg');
+        height: 24px;
+    }
+    .email {
+        background-image: url('../../media/email.svg');
+        width: 20px;
+        height: 15px;
+    }
+    .mailto {
+        font-size: 13px;
+        display: inline-block;
+        margin-left: 7px;
+    }
 }
 
 .resume-title {
@@ -103,4 +135,3 @@
     height: 250px;
     background-repeat: no-repeat;
 } */
-

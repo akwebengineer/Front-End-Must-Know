@@ -48,6 +48,7 @@ body {
     /* background-image: url('../../media/background.jpg'); */
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 .app-main-section {

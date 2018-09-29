@@ -12,3 +12,7 @@
 .blog-iframe .item-view {
     font-family: 'Open Sans', sans-serif !important;
 }
+
+.blog-iframe .k {
+    display: none;
+}
