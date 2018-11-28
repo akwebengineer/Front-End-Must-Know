@@ -30,7 +30,9 @@ const styles = theme => ({
         fontFamily: "'Open Sans', sans-serif",
         background: '#ffffff',
         color: '#f94b04',
+        // color: '#2cb5e8',
         borderBottom: '0.1px solid #f94b04',
+        // borderBottom: '0.1px solid #2cb5e8',
         zIndex: theme.zIndex.drawer + 1,
     },
     flex: {

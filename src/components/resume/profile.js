@@ -3,7 +3,10 @@ import Divider from '@material-ui/core/Divider';
 
 const styles = {
     experienceHead: {
-        color: '#f94b04'        
+        // color: '#2cb5e8',       
+    },
+    experienceTitle:{
+        color: '#f94b04' 
     },
     experiencePoints: {
         marginLeft: '30px',
@@ -26,7 +29,7 @@ const Profile = () => (
             <h2 style={styles.experienceHead}>
                 Arvind Kannan
             </h2>
-            <h3>
+            <h3 style={styles.experienceTitle}>
                 Full Stack JS Developer
             </h3>
         </header>
@@ -47,7 +50,7 @@ const Profile = () => (
                 Experience
             </h3>
             <article style={styles.articleSection}>
-                <h4>
+                <h4 style={styles.experienceTitle}>
                     Senior Software Engineer at Juniper Networks
                 </h4>
                 <h5 > November 2015 - Present </h5>
@@ -83,7 +86,7 @@ const Profile = () => (
                 </div>
             </article>
             <article style={styles.articleSection}>
-                <h4>
+                <h4 style={styles.experienceTitle}>
                     Senior Software Engineer at BMC Software
             </h4>
                 <h5 > April 2013  -  May 2015 </h5>
@@ -111,7 +114,7 @@ const Profile = () => (
                 </div>
             </article>
             <article style={styles.articleSection}>
-                <h4>
+                <h4 style={styles.experienceTitle}>
                     Software Engineer at Prosoft IT Services
                 </h4>
                 <h5 >October 2010  -  March 2013 </h5>
@@ -135,7 +138,7 @@ const Profile = () => (
                 </div>
             </article>
             <article style={styles.articleSection}>
-                <h4>
+                <h4 style={styles.experienceTitle}>
                     IT Analyst at Tata Consultancy Services
                 </h4>
                 <h5 >August 2008  -  October 2010</h5>
@@ -162,7 +165,7 @@ const Profile = () => (
                 </div>
             </article>
             <article style={styles.articleSection}>
-                <h4>
+                <h4 style={styles.experienceTitle}>
                     System Engineer at Tata Consultancy Services
                 </h4>
                 <h5 >June 2005  -  August 2008</h5>
@@ -184,7 +187,7 @@ const Profile = () => (
             </h3>
         </section>
         <article style={styles.articleSection}>
-                <h4>
+                <h4 style={styles.experienceTitle}>
                 Visvesvaraya Technological University
                 </h4>
                 <h5 >2000 - 2004</h5>

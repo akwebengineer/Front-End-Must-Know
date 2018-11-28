@@ -1,0 +1,15 @@
+.centered-top-container {
+    display: none;
+}
+
+.page_body {
+    background-color: #ffffff00;
+}
+
+.centered-bottom .widget {
+    box-shadow: 0px 0px 0px 0px;
+}
+
+.post-outer-container {
+    box-shadow: 0px 3px 2px 2px #6f6d6d;
+}

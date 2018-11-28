@@ -9,6 +9,11 @@
 
     },
     "2": {
+        "label": "My Work",
+        "URL": "work"
+
+    },
+    "3": {
         "label": "Resume",
         "URL": "resume"
 

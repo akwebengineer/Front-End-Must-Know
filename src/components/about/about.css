@@ -1,34 +1,53 @@
+@media only screen and (max-width: 768px) {
+    .about-background {
+        background: none;
+    }
+    .about-wrapper {
+        /* background: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%); */
+    }
+    .about-left {
+        width: 100%;
+        position: relative;
+        margin-left: 20px;
+        margin-right: 20px;
+        /* color: #ffffff; */
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .about-background {
+        background-image: url('../../media/aboutBg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: blur(2px);
+        -webkit-filter: blur(2px);
+    }
+    .about-wrapper {
+        background: none;
+    }
+    .about-left {
+        width: 50%;
+        position: relative;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
 .about-background {
-    background-image: url('../../media/aboutBg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: blur(2px);
-    -webkit-filter: blur(2px);
     position: absolute;
     width: 100%;
     height: 100%;
-    /* background-position-x: center;
-    background-position-y: center; */
 }
 
 .about-wrapper {
     display: flex;
     flex-direction: row;
-    /* position: fixed; */
-    position: absolute  ;
-
+    position: absolute;
     min-height: 100%;
     width: 100%;
 }
 
-.about-left {
-    width: 50%;
-    position: relative;
-    margin-left: 20px;
-    margin-right: 20px;
-    /* color: #f94b04; */
-}
-
 .about-title {
     color: #f94b04;
+    /* color: #2cb5e8; */
 }

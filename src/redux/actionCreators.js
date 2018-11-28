@@ -37,8 +37,11 @@ const navigate = (URL) => {
         case "blog":
             action.payload.activeTab = 1;
             break;
-        case "resume":
+        case "work":
             action.payload.activeTab = 2;
+            break;            
+        case "resume":
+            action.payload.activeTab = 3;
             break;
         default:
             action.payload.activeTab = 0;

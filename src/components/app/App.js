@@ -21,6 +21,7 @@ import ButtonAppBar from '../materialUI/appBar'
 import AboutMe from '../about/about';
 import Resume from '../resume/resume';
 import MyBlogs from '../blogs/blogs';
+import MyWork from '../work/work';
 
 //End imports
 
@@ -64,6 +65,7 @@ class App extends Component {
                 <Route path="/about" component={AboutMe}/>
                 <Route path="/resume" component={Resume}/>
                 <Route path="/blog" component={MyBlogs}/>
+                <Route path="/work" component={MyWork}/>
               </section>
             </div>
             <footer></footer>
